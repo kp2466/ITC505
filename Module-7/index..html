@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List with Email Submission</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #3939c1;
+            color: #1c0a0a;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        #toDoList {
+            list-style: none;
+            padding: 0;
+        }
+        .task {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #161515;
+            border: 1px solid #0f0d0d;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .task:hover {
+            background-color: #936060;
+        }
+        .highlight {
+            background-color: rgba(255, 0, 0, 0.512);
+        }
+        .submitted {
+            background-color: rgb(197, 220, 25);
+        }
+        #message {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #1dca45;
+            color: #160ebd;
+            border: 1px solid #15e345;
+        }
+        .status-codes {
+            margin-top: 20px;
+        }
+        .status-codes h2 {
+            font-size: 1.5em;
+        }
+        .status-codes ul {
+            list-style: none;
+            padding: 0;
+        }
+        .status-codes li {
+            background-color: #e42626;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <ul id="toDoList">
+        <li class="task" data-task="task1">GO TO STORE</li>
+        <li class="task" data-task="task2">GO TO CRICKET/li>
+        <li class="task" data-task="task3">GO TO PARTY</li>
+        <li class="task" data-task="task4">Go TO SLEEP BY 10</li>
+        <li class="task" data-task="task5">GO TO FRIENDS PARTY</li>
+    </ul>
+
+    <form id="emailForm" style="display: none;">
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div id="message" style="display: none; color: green; margin-top: 10px;"></div>
+    <div id="message" style="display: none;"></div>
+
+    <div class="status-codes">
+        <h2>HTTP Status Codes</h2>
+        <ul>
+            <li><strong>200 OK:</strong> The request has been succeeded.</li>
+            <li><strong>201 Created:</strong> The request is fulfilled and it got resulted in a new resource being created.</li>
+            <li><strong>400 Bad Request:</strong> The server cannot understand the request due to an invalid syntax.</li>
+            <li><strong>401 Unauthorized:</strong> The client need to authenticate himself to get the requested response.</li>
+            <li><strong>403 Forbidden:</strong> The client dont have any access rights to the content.</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>Last updated: <span id="lastModified"></span></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
